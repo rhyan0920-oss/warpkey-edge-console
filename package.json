@@ -1,0 +1,28 @@
+{
+  "name": "warpkey-edge-console",
+  "version": "2.0.0",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nas-tool/warpkey.git"
+  },
+  "homepage": "https://warpkey-edge-console.niubiplus.workers.dev",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "check": "tsc --noEmit",
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:cloudflare": "node scripts/deploy.mjs",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local",
+    "db:migrate:remote": "wrangler d1 migrations apply DB --remote"
+  },
+  "dependencies": {
+    "hono": "^4.8.12"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250718.0",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.25.0"
+  }
+}
